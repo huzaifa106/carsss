@@ -1,0 +1,30 @@
+/* Color Adjustments */
+.text-gold-500 {
+    color: #fff291; /* Gold for text */
+  }
+  .bg-gold-500 {
+    background-color: #ffd700; /* Gold for button */
+  }
+  .bg-gold-600 {
+    background-color: #e6c300; /* Darker gold for hover */
+  }
+  
+  /* Typography */
+  .font-serif {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+  }
+  .font-light {
+    font-weight: 300; /* Light weight for paragraph */
+  }
+  
+  /* Shadows for Depth */
+  .drop-shadow-xl {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8), 0 4px 15px rgba(255, 215, 0, 0.6);
+  }
+  .drop-shadow-md {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 6px rgba(255, 255, 255, 0.3);
+  }
+  video {
+    z-index: 1; /* Ensure the video is on top of other elements */
+  }
+  

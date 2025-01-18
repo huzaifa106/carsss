@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Luxury car rental website offering a wide selection of premium vehicles. Rent your dream car today!">
+  <meta name="keywords" content="luxury cars, car rentals, premium cars, exotic cars">
+  <meta name="author" content="Luxury Car Rentals">
+  <title>Luxury Car Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #1a202c;
+      color: #edf2f7;
+    }
+
+    .glowing-title {
+      color: white;
+      text-shadow: 0 0 5px #00bfff, 0 0 15px #00bfff;
+    }
+
+    .glowing-button {
+      background: linear-gradient(45deg, #00bfff, #ff4081);
+      box-shadow: 0 0 10px #00bfff, 0 0 20px #ff4081;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      padding: 10px 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glowing-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00bfff, 0 0 30px #ff4081;
+    }
+
+    .sidebar {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+
+    .card {
+      background-color: #1e293b;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4 px-6">
+    <div class="flex justify-between items-center">
+      <h1 class="text-3xl glowing-title font-bold">Luxury Car Rentals</h1>
+      <div class="flex items-center gap-6">
+        <input type="text" placeholder="Search something here..." 
+               class="w-80 p-3 rounded-full text-sm placeholder-gray-400">
+        <button class="glowing-button px-4 py-2 ml-2">
+          <i class="fas fa-search"></i>
+        </button>
+        <i class="fas fa-bell text-xl hover:text-blue-300 cursor-pointer"></i>
+        <i class="fas fa-user text-xl hover:text-blue-300 cursor-pointer"></i>
+        <i class="fas fa-heart text-xl hover:text-blue-300 cursor-pointer"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative h-[90vh]">
+    <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover">
+      <source src="../Video/yt1z.net - Luxury Cars Free Stock Videos No Copyright.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+    <div class="relative z-10 flex items-center justify-center h-full text-white">
+      <div class="text-center max-w-3xl">
+        <h1 class="text-6xl font-bold glowing-title mb-6">Indulge in Luxury, Drive Your Dream</h1>
+        <p class="text-lg font-light mb-8">Experience the finest selection of luxury cars designed for elegance and performance.</p>
+        <a href="#cars" class="glowing-button">Explore Our Cars</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sidebar Toggle Button -->
+  <button id="filter-toggle" class="fixed top-[100px] left-4 bg-blue-600 text-white p-3 rounded-full shadow-lg z-50 glowing-button">
+    <i class="fas fa-filter"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="fixed top-[80px] left-0 w-64 bg-gray-900 text-white shadow-lg h-[calc(100vh-80px)] overflow-y-auto sidebar z-40 p-5">
+    <h2 class="text-2xl font-bold mb-4">FilFilter Options</h2>
+    <div>
+      <!-- Price Range -->
+      <div class="mb-6">
+        <label class="block text-lg font-medium mb-2">Price Range ($)</label>
+        <div class="flex gap-2">
+          <input type="number" placeholder="Min" class="w-full p-2 border rounded text-gray-900" min="500" max="60000">
+          <input type="number" placeholder="Max" class="w-full p-2 border rounded text-gray-900" min="500" max="60000">
+        </div>
+      </div>
+      <!-- Car Type -->
+      <div class="mb-6">
+        <label class="block text-lg font-medium mb-2">Car Type</label>
+        <select class="w-full p-3 border rounded text-gray-900">
+          <option>Sports</option>
+          <option>SUV</option>
+          <option>Sedan</option>
+          <option>Convertible</option>
+        </select>
+      </div>
+      <!-- Seating Capacity -->
+      <div class="mb-6">
+        <label class="block text-lg font-medium mb-2">Seating Capacity</label>
+        <select class="w-full p-3 border rounded text-gray-900">
+          <option>2 Seats</option>
+          <option>4 Seats</option>
+          <option>6 Seats</option>
+          <option>8 Seats</option>
+        </select>
+      </div>
+      <!-- Apply Filters -->
+      <div class="mb-6">
+        <button class="w-full bg-blue-600 py-2 text-white font-bold rounded glowing-button">
+          Apply Filters
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cars Section -->
+  <main class="container mx-auto p-5" id="cars">
+    <h2 class="text-3xl font-bold mb-6">Our Premium Cars Collection</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Car Cards -->
+      <div class="card">
+        <img src="../photos/car (1).jpeg" alt="BMW M5" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">BMW M5</h3>
+          <p class="text-gray-400 mb-4">The ultimate driving machine.</p>
+          <a href="buynow.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../photos/car (10).jpeg" alt="Audi R8" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Audi R8</h3>
+          <p class="text-gray-400 mb-4">Precision-engineered for power and control.</p>
+          <a href="audirent.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../photos/car (11).jpeg" alt="Lamborghini Huracan" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Lamborghini Huracan</h3>
+          <p class="text-gray-400 mb-4">Unleash the beast on the road.</p>
+          <a href="lamborghinirent.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../photos/car (15).jpeg" alt="Mercedes-Benz S-Class" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Mercedes-Benz S-Class</h3>
+          <p class="text-gray-400 mb-4">The pinnacle of luxury and elegance.</p>
+          <a href="mercedes.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../photos/car (17).jpeg" alt="Ferrari 488 GTB" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Ferrari 488 GTB</h3>
+          <p class="text-gray-400 mb-4">Iconic design meets unmatched performance.</p>
+          <a href="ferrari.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../photos/car (16).jpeg" alt="Porsche 911 Carrera" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold mb-2">Porsche 911 Carrera</h3>
+          <p class="text-gray-400 mb-4">Timeless style and thrilling performance.</p>
+          <a href="porsche.html" class="glowing-button block py-2 text-center">Rent Now</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10">
+    <div class="container mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <div>
+        <h3 class="text-xl font-bold mb-4">About Us</h3>
+        <p>Your ultimate destination for luxury car rentals. Experience top-notch service and vehicles.</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+        <ul>
+          <li><a href="#" class="hover:text-blue-400">Home</a></li>
+          <li><a href="#" class="hover:text-blue-400">Our Cars</a></li>
+          <li><a href="#" class="hover:text-blue-400">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+        <div class="flex gap-4">
+          <i class="fab fa-facebook text-2xl hover:text-blue-400 cursor-pointer"></i>
+          <i class="fab fa-twitter text-2xl hover:text-blue-400 cursor-pointer"></i>
+          <i class="fab fa-instagram text-2xl hover:text-blue-400 cursor-pointer"></i>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-8">&copy; 2025 Luxury Car Rentals. All rights reserved.</div>
+  </footer>
+
+  <!-- JavaScript for Sidebar Toggle -->
+  <script>
+    document.getElementById('filter-toggle').addEventListener('click', function () {
+      const sidebar = document.getElementById('sidebar');
+      sidebar.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>

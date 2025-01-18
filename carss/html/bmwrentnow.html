@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Billing Info</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      background-color: #0f172a; /* Dark background */
+      color: #edf2f7; /* Light text */
+    }
+    .glowing-title {
+      color: #ffffff;
+      text-shadow: 0 0 8px #00bfff, 0 0 15px #ff00ff;
+    }
+    .glowing-button {
+      background: linear-gradient(45deg, #00bfff, #ff4081);
+      box-shadow: 0 0 10px #00bfff, 0 0 20px #ff4081;
+      color: white;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      padding: 10px 20px;
+    }
+    .glowing-button:hover {
+      background: linear-gradient(45deg, #ff4081, #00bfff);
+      box-shadow: 0 0 20px #ff4081, 0 0 30px #00bfff;
+    }
+    .input-field {
+      background-color: #1e293b; /* Darker input background */
+      color: #edf2f7; /* Light input text */
+      border: 1px solid #374151;
+      border-radius: 0.5rem;
+      padding: 0.75rem 1rem;
+      width: 100%;
+    }
+    .input-field::placeholder {
+      color: #94a3b8; /* Placeholder text color */
+    }
+    .section-heading {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #94a3b8; /* Subtle heading color */
+      margin-bottom: 0.5rem;
+    }
+    .bg-dark-card {
+      background-color: #1e293b; /* Dark card background */
+    }
+    .text-muted {
+      color: #94a3b8; /* Muted text for description */
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="bg-gray-900 text-white py-4 px-6">
+    <div class="flex justify-between items-center">
+             <h1 class="text-3xl glowing-title font-bold">Luxury Car Rentals</h1>
+      <div class="flex items-center gap-6">
+        <div class="flex items-center">
+          <input type="text" placeholder="Search something here..."
+                 class="input-field w-80 rounded-full text-sm">
+          <button class="glowing-button px-4 py-2 ml-2">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <i class="fas fa-bell text-xl hover:text-blue-300 cursor-pointer"></i>
+        <i class="fas fa-user text-xl hover:text-blue-300 cursor-pointer"></i>
+        <i class="fas fa-heart text-xl hover:text-blue-300 cursor-pointer"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Go Back Button -->
+  <a href="main.html" class="glowing-button mt-4 ml-6">
+    <i class="fas fa-arrow-left"></i> Go Back
+  </a>
+
+  <!-- Billing Info Section -->
+  <main class="container mx-auto p-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Billing Info -->
+      <div class="bg-dark-card rounded-lg shadow-lg p-6 lg:col-span-2">
+        <h2 class="text-2xl font-bold mb-4 glowing-title">Billing Info</h2>
+        <p class="text-muted mb-6">Please enter your billing info</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Name -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Name</label>
+            <input type="text" placeholder="Your Name" class="input-field">
+          </div>
+          <!-- Phone Number -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Phone Number</label>
+            <input type="text" placeholder="Your Phone Number" class="input-field">
+          </div>
+          <!-- Address -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Address</label>
+            <input type="text" placeholder="Your Address" class="input-field">
+          </div>
+          <!-- City -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Town/City</label>
+            <input type="text" placeholder="Your City" class="input-field">
+          </div>
+        </div>
+
+        <h3 class="section-heading mt-6">Rental Info</h3>
+        <p class="text-muted mb-6">Please select your rental date</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Location -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Locations</label>
+            <select class="input-field">
+              <option>Select Your City</option>
+              <option>New York</option>
+              <option>Los Angeles</option>
+              <option>Chicago</option>
+            </select>
+          </div>
+          <!-- Date -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Date</label>
+            <input type="date" class="input-field">
+          </div>
+        </div>
+
+        <h3 class="section-heading mt-6">Payment Info</h3>
+        <p class="text-muted mb-6">Enter your payment details</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Card Number</label>
+            <input type="text" placeholder="Card number" class="input-field">
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Expiration Date</label>
+            <input type="text" placeholder="DD/MM/YY" class="input-field">
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">Card Holder</label>
+            <input type="text" placeholder="Card Holder Name" class="input-field">
+          </div>
+          <div>
+            <label class="block mb-2 text-sm font-medium text-muted">CVC</label>
+            <input type="text" placeholder="CVC" class="input-field">
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation Section -->
+      <div class="bg-dark-card rounded-lg shadow-lg p-6">
+        <h2 class="section-heading">Confirmation</h2>
+        <p class="text-muted mb-4">
+          We are getting to the end. Just a few clicks and your rental is ready.
+        </p>
+        <div class="flex items-start mb-4">
+          <input type="checkbox" id="marketing" class="mt-1">
+          <label for="marketing" class="ml-2 text-sm text-muted">
+            I agree with sending marketing and newsletter emails. No spam, promised!
+          </label>
+        </div>
+        <div class="flex items-start mb-4">
+          <input type="checkbox" id="terms" class="mt-1">
+          <label for="terms" class="ml-2 text-sm text-muted">
+            I agree with our terms and conditions and privacy policy.
+          </label>
+        </div>
+        <a href="bmwrent.html" class="glowing-button mt-6">
+          Rent Now
+        </a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
